@@ -4,11 +4,15 @@
 #define RST_PIN 7  
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 MFRC522::MIFARE_Key key;          
-int blockNum = 2;  //location in the tag where we want to save our data
-byte blockData [16]; //array to store the person's name
-byte bufferLen = 18;
-byte readBlockData[18];
 String Name;
+String ID;
+
+int blockNum1 = 2;  //location in the tag where we want to save our data
+int blockNum2 = 3;
+
+byte bufferLen = 18;
+byte nameBlockData[18];
+byte idBlockData[18];
 MFRC522::StatusCode status;
 
 void setup() {
@@ -39,13 +43,20 @@ void loop() {
   Serial.println("**Card Detected**");
   Serial.print("\n");
   Serial.println("Reading from Data Block...");
-  ReadDataFromBlock(blockNum, readBlockData);
+  ReadDataFromBlock(blockNum1, nameBlockData);
 
   for(int j=0;j<16;j++){
-      Name=Serial.write(readBlockData[j]);
+      Name=Serial.write(nameBlockData[j]);
     }
+    
+  ReadDataFromBlock(blockNum2, idBlockData);
 
-  Serial.println( (String) "DATA,DATE,TIME," + Name );
+  for(int j=0;j<16;j++){
+      ID=Serial.write(idBlockData[j]);
+    }
+  
+
+  Serial.println( (String) "DATA,DATE,TIME," + Name + ID );
 }
 
 void ReadDataFromBlock(int blockNum, byte readBlockData[]) 
