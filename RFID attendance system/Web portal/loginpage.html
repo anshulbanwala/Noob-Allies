@@ -1,0 +1,90 @@
+<html>   
+<head>  
+
+<title> Login Page </title>
+<link rel="icon" type="image/png" href="fevicon_1.png"/> 
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-image: url(https://media.istockphoto.com/vectors/camouflage-pattern-background-vector-classic-clothing-style-masking-vector-id1222764397?k=20&m=1222764397&s=612x612&w=0&h=BIaVcpme5NyTTwFoXZg_WwUnJ9grCnI4YdyZ4EzS0OY=);
+  background-repeat: repeat;
+  backdrop-filter: blur(2.5px); 
+}  
+button {   
+       background-color: #4CAF50;   
+       width: 100%;  
+        color: black;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        margin: auto;
+        margin-top: 25px;
+        width:40%;
+        border:5px solid darkslategray ; 
+        border-radius: 5px;
+
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 3px solid darkgreen;   
+        box-sizing: border-box; 
+        border-radius: 5px;  
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+.forgotbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }
+        
+     
+ .container {
+
+        padding: 25px;   
+        background-color:#e4be79;
+        
+        
+    }
+#portal{
+    padding-top: 95px;
+    color: #aac4aa;
+    font-family: Tahoma;
+}
+ 
+</style>   
+</head>    
+<body>  
+        <div id="portal"><center id="section-heading"> <h1> ARMY LOGIN PORTAL </h1> </center></div>  
+       
+    <form action="profile.html">
+     
+        <div class="container">   
+            <label>Username : </label>   
+            <input type="text" placeholder="Enter Username (eg:name_army id)" name="username" required>  
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" required>  
+            <button type="submit">Login</button>  
+            <input type="checkbox" checked="checked"> Remember me    
+            <button type="button" class="forgotbtn" onclick="myonclick()"> Forget Password</button>  
+            <script>
+            function myonclick(){
+                document.location.href="profile.html";
+            } 
+        </script>
+        </div>   
+    </form>     
+</body>     
+</html>  
