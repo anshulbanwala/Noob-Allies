@@ -1,8 +1,13 @@
 <html>   
 <head>  
 
-<title> Login Page </title>
-<link rel="icon" type="image/png" href="fevicon_1.png"/> 
+<title> Forgot Password </title>
+<link rel="icon" type="image/png" href="fevicon_1.png"/>
+<script type="text/javascript">
+            function showMessage() {
+                alert("Thank You, Your response has been recorded :)");
+            }
+        </script> 
 <style>   
 Body {  
   font-family: Calibri, Helvetica, sans-serif;  
@@ -67,23 +72,17 @@ button {
 </style>   
 </head>    
 <body>  
-        <div id="portal"><center id="section-heading"> <h1> ARMY LOGIN PORTAL </h1> </center></div>  
+        <div id="portal"><center id="section-heading"> <h1> RE-SET YOUR PASSWORD </h1> </center></div>  
        
-    <form action="profile.html">
+    <form action="loginpage.html">
      
         <div class="container">   
-            <label>Username : </label>   
-            <input type="text" placeholder="Enter Username (eg:name_army id)" name="username" required>  
-            <label>Password : </label>   
-            <input type="password" placeholder="Enter Password" name="password" required>  
-            <button type="submit">Login</button>  
-            <input type="checkbox" checked="checked"> Remember me    
-            <button type="button" class="forgotbtn" onclick="myonclick()"> Forget Password</button>  
-            <script>
-            function myonclick(){
-                document.location.href="newpass.html";
-            } 
-        </script>
+            <label>New Password : </label>   
+            <input type="password" placeholder="Enter new password" name="username" required>  
+            <label>Confirm new password : </label>   
+            <input type="password" placeholder="Re enter password here" name="password" required>  
+             <button type="submit" onclick="showMessage()" class="button">Submit</button>   
+
         </div>   
     </form>     
 </body>     
